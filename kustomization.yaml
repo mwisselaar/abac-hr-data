@@ -1,0 +1,23 @@
+# Bezorging via ArgoCD (Application `abac-hr-data`, AppProject `abac-hr-data`,
+# bestemming ns `opa`): deze ConfigMap wordt gemount als tweede, disjuncte
+# data-map (`/hr-data`) naast de bestaande `opa-policy`-ConfigMap op de
+# centrale PDP. Zie datalab, `gitops/apps/opa/base/opa-deployment.yaml` en
+# `ABAC-classificatie-met-OPA/architecture.md` §3.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: opa
+
+configMapGenerator:
+  - name: hr-kenmerken
+    files:
+      - hr_kenmerken.json
+
+generatorOptions:
+  # Een stabiele naam: de PDP-Deployment verwijst naar `hr-kenmerken` zonder
+  # hash-achtervoegsel. Een suffix zou bij elke wijziging een nieuwe
+  # ConfigMap-naam geven — en de PDP mount een vaste naam, geen kustomize-
+  # generated-name-reference (dat zou een wijziging aan het Deployment
+  # vereisen bij elke HR-commit, precies wat dit ontwerp wil vermijden: de
+  # HR-webUI mag nooit het Deployment van de PDP hoeven raken).
+  disableNameSuffixHash: true

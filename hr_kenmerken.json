@@ -1,0 +1,44 @@
+{
+  "hr_kenmerken": {
+    "PN-10412": {
+      "login": "ans",
+      "naam": "Brent Vergeer",
+      "afdeling": "data-governance",
+      "functie": "steward",
+      "business_clearance": "hoog",
+      "sinds": "2018-03-01"
+    },
+    "PN-13087": {
+      "login": "pietje",
+      "naam": "Muhammed Takkelenburg",
+      "afdeling": "facilitair",
+      "functie": "medewerker",
+      "business_clearance": "laag",
+      "sinds": "2021-09-15"
+    },
+    "PN-13512": {
+      "login": "klaasje",
+      "naam": "Maya Ferran",
+      "afdeling": "analytics",
+      "functie": "analist",
+      "business_clearance": "midden",
+      "sinds": "2022-01-10"
+    },
+    "PN-14201": {
+      "login": "sylvia",
+      "naam": "Iris Heerkens-Tins",
+      "afdeling": "platform-engineering",
+      "functie": "developer",
+      "business_clearance": "laag",
+      "sinds": "2023-06-01"
+    },
+    "PN-15734": {
+      "login": "jantje",
+      "naam": "Annemijn Moet",
+      "afdeling": "analytics",
+      "functie": "analist",
+      "business_clearance": "midden",
+      "sinds": "2026-08-01"
+    }
+  }
+}
